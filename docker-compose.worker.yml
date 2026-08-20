@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.worker
+    container_name: autoroll-worker-${AUTOROLL_WORKER_ID:-node-01}
+    restart: always
+    environment:
+      - AUTOROLL_SERVER_URL=${AUTOROLL_SERVER_URL:-http://192.168.1.100:8000}
+      - AUTOROLL_WORKER_ID=${AUTOROLL_WORKER_ID:-worker-node-01}
+      - AUTOROLL_MODEL_PATH=${AUTOROLL_MODEL_PATH:-models/checkpoints/arcface_iresnet50.pth}
+      - AUTOROLL_CAMERA_CONFIG=${AUTOROLL_CAMERA_CONFIG:-configs/camera_config.yaml}
+      - AUTOROLL_DEVICE=${AUTOROLL_DEVICE:-auto}
+    volumes:
+      - ./configs:/app/configs
+      - ./models:/app/models
+    # Uncomment the following section to enable NVIDIA CUDA GPU access:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]

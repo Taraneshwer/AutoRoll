@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libgl1 \
+    libglib2.0-0 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt pyproject.toml ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY autoroll ./autoroll
+COPY worker ./worker
+COPY models ./models
+COPY configs ./configs
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+    CMD python -c "import socket; socket.create_connection(('localhost', 8000), timeout=2)" || exit 0
+
+CMD ["python", "worker/app.py"]

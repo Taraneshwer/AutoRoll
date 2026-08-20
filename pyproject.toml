@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoroll"
+version = "0.1.0"
+description = "Privacy-preserving, AI-powered face recognition attendance system"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "AutoRoll Architecture Team" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["backend/tests"]
+pythonpath = [".", "backend"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = []

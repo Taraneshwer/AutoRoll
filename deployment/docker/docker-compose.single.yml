@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  autoroll-server:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.server
+    container_name: autoroll_single_server
+    ports:
+      - "8000:8000"
+    environment:
+      - AUTOROLL_ENVIRONMENT=production
+      - AUTOROLL_WORKER_SECRET=autoroll_secret_2026
+      - AUTOROLL_RECOGNITION_MODEL=autoroll_v1
+    restart: always
+
+  autoroll-worker:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.worker.gpu
+    container_name: autoroll_local_worker
+    environment:
+      - AUTOROLL_SERVER_URL=http://autoroll-server:8000
+      - AUTOROLL_WORKER_ID=worker-local-01
+      - AUTOROLL_WORKER_SECRET=autoroll_secret_2026
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    depends_on:
+      - autoroll-server
+    restart: always

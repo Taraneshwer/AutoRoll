@@ -1,0 +1,12 @@
+experiment_name: "arcface_iresnet50_baseline"
+model_version: "arcface_iresnet50_v1"
+dataset: "MS1MV2"
+embedding_dimension: 512
+training:
+  batch_size: 128
+  learning_rate: 0.1
+  epochs: 25
+  margin_m: 0.5
+  scale_s: 64.0
+metrics:
+  target_far: 0.0001

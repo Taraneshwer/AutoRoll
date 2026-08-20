@@ -1,0 +1,6 @@
+{
+  "experiment_id": "exp_arcface_iresnet50_v1",
+  "best_val_loss": 3.5935919284820557,
+  "model_version": "arcface_iresnet50_v1",
+  "epochs_completed": 5
+}

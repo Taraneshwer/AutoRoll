@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: autoroll-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-autoroll}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-autoroll_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-autoroll_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-autoroll}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.server
+    container_name: autoroll-server
+    restart: always
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8000
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-autoroll}:${POSTGRES_PASSWORD:-autoroll_secret}@postgres:5432/${POSTGRES_DB:-autoroll_db}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-default_secret_key_change_me_in_prod}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.frontend
+    container_name: autoroll-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+volumes:
+  postgres_data:

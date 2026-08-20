@@ -1,0 +1,62 @@
+[
+  {
+    "num_workers": 1,
+    "num_cameras": 8,
+    "total_throughput_fps": 1230.01,
+    "per_camera_fps": 153.75,
+    "avg_latency_ms": 0.81,
+    "p95_latency_ms": 1.06,
+    "p99_latency_ms": 1.34,
+    "dropped_frames": 0,
+    "cpu_utilization_percent": 18.5,
+    "gpu_utilization_percent": 0.0,
+    "network_mbps": 0.12,
+    "worker_utilization_percent": 82.0,
+    "scaling_efficiency_percent": 100.0
+  },
+  {
+    "num_workers": 2,
+    "num_cameras": 8,
+    "total_throughput_fps": 1312.08,
+    "per_camera_fps": 164.01,
+    "avg_latency_ms": 0.76,
+    "p95_latency_ms": 0.92,
+    "p99_latency_ms": 1.07,
+    "dropped_frames": 0,
+    "cpu_utilization_percent": 37.0,
+    "gpu_utilization_percent": 0.0,
+    "network_mbps": 0.24,
+    "worker_utilization_percent": 41.0,
+    "scaling_efficiency_percent": 100.0
+  },
+  {
+    "num_workers": 3,
+    "num_cameras": 8,
+    "total_throughput_fps": 1278.63,
+    "per_camera_fps": 159.83,
+    "avg_latency_ms": 0.78,
+    "p95_latency_ms": 0.98,
+    "p99_latency_ms": 1.31,
+    "dropped_frames": 0,
+    "cpu_utilization_percent": 55.5,
+    "gpu_utilization_percent": 0.0,
+    "network_mbps": 0.36,
+    "worker_utilization_percent": 27.3,
+    "scaling_efficiency_percent": 100.0
+  },
+  {
+    "num_workers": 4,
+    "num_cameras": 8,
+    "total_throughput_fps": 1277.63,
+    "per_camera_fps": 159.7,
+    "avg_latency_ms": 0.78,
+    "p95_latency_ms": 1.03,
+    "p99_latency_ms": 1.14,
+    "dropped_frames": 0,
+    "cpu_utilization_percent": 74.0,
+    "gpu_utilization_percent": 0.0,
+    "network_mbps": 0.48,
+    "worker_utilization_percent": 20.5,
+    "scaling_efficiency_percent": 100.0
+  }
+]

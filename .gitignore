@@ -1,16 +1,61 @@
-# Cache objects
-packer_cache/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Crash log
-crash.log
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
 
-# https://www.packer.io/guides/hcl/variables
-# Exclude all .pkrvars.hcl files, which are likely to contain sensitive data, 
-# such as password, private keys, and other secrets. These should not be part of 
-# version control as they are data points which are potentially sensitive and 
-# subject to change depending on the environment.
-#
-*.pkrvars.hcl
+# Environment files
+.env
+!.env.example
 
-# For built boxes
-*.box
+# Database & Data
+*.db
+*.sqlite
+data/
+*.onnx
+*.pth
+*.pt
+*.engine
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# AutoRoll Local Data
+/data/
+/logs/

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  autoroll-control-plane:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.server
+    container_name: autoroll_control_server
+    ports:
+      - "8000:8000"
+    environment:
+      - AUTOROLL_ENVIRONMENT=production
+      - AUTOROLL_WORKER_SECRET=autoroll_secret_2026
+      - AUTOROLL_RECOGNITION_MODEL=autoroll_v1
+    restart: always

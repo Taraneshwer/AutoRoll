@@ -1,0 +1,51 @@
+# AutoRoll Dataset Manifest Registry Configuration
+# Specifies training, benchmark, and local dataset sources, licenses, scale, and local paths
+
+datasets:
+  lfw:
+    name: "Labeled Faces in the Wild (LFW)"
+    version: "1.0.0"
+    source: "https://vis-www.cs.umass.edu/lfw/"
+    license: "Academic Research / Public Domain"
+    purpose: "Public Evaluation & Baseline Verification Benchmark"
+    expected_scale:
+      identities: 5749
+      images: 13233
+      storage_mb: 200
+    local_path: "./data/benchmarks/lfw/"
+
+  training_candidate_1:
+    name: "VGGFace2"
+    version: "2.0.0"
+    source: "http://www.robots.ox.ac.uk/~vgg/data/vgg_face2/"
+    license: "Academic Non-Commercial License (Creative Commons BY-SA 4.0)"
+    purpose: "Primary Large-Scale ArcFace Fine-Tuning Candidate"
+    expected_scale:
+      identities: 9131
+      images: 3310000
+      storage_gb: 36.5
+    local_path: "./data/face_recognition/vggface2/"
+
+  training_candidate_2:
+    name: "CASIA-WebFace"
+    version: "1.0.0"
+    source: "http://www.cbsr.ia.ac.cn/english/CASIA-WebFace-Database.html"
+    license: "Academic Non-Commercial Research License"
+    purpose: "Secondary Medium-Scale ArcFace Fine-Tuning Candidate"
+    expected_scale:
+      identities: 10575
+      images: 494414
+      storage_gb: 4.2
+    local_path: "./data/face_recognition/casia_webface/"
+
+  local_students:
+    name: "AutoRoll Local Student Dataset"
+    version: "1.0.0"
+    source: "Local Campus Enrollment Stream"
+    license: "Internal Educational Privacy Protected Data"
+    purpose: "Enrollment, Real-Camera Testing, Domain Calibration"
+    expected_scale:
+      identities: 100
+      images: 500
+      storage_mb: 150
+    local_path: "./data/local_students/"

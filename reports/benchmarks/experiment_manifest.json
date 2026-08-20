@@ -1,0 +1,12 @@
+{
+  "experiment_name": "AutoRoll Phase 16 Rigorous Evaluation",
+  "timestamp": "2026-08-20 18:04:21",
+  "random_seed": 2026,
+  "model_pretrained_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+  "model_autoroll_epoch1": "autoroll_arcface_v1_epoch1",
+  "python_version": "3.11.13",
+  "dataset_manifest_checksum": "cbb5165e39f8d2c3e7d471c9e00cac67aeb97b4db342c532dec07049762e9d7c",
+  "total_participants": 100,
+  "calibration_participants": 50,
+  "test_participants": 50
+}

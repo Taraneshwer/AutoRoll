@@ -1,0 +1,14 @@
+{
+  "participants_declared_phase16": 100,
+  "participants_actual_real_world_eval": 0,
+  "participants_actual_autoroll_benchmark": 25,
+  "images_actual_real_world_eval": 0,
+  "images_actual_autoroll_benchmark": 525,
+  "genuine_trials_actual_raw": 0,
+  "impostor_trials_actual_raw": 0,
+  "liveness_samples_actual_raw": 0,
+  "distributed_experiments_actual_multi_node": 0,
+  "failover_trials_actual_raw_logs": 5,
+  "pretrained_onnx_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+  "epoch1_checkpoint_sha256": "ed7456d474015570385634b660f0f5853f7b594e8d2cb333b923aabc2f2a42cf"
+}

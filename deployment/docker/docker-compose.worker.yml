@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  autoroll-node-worker:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.worker.gpu
+    container_name: autoroll_node_worker
+    environment:
+      - AUTOROLL_SERVER_URL=${AUTOROLL_SERVER_URL:-http://control-plane-host:8000}
+      - AUTOROLL_WORKER_ID=${AUTOROLL_WORKER_ID:-worker-node-01}
+      - AUTOROLL_WORKER_SECRET=autoroll_secret_2026
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: always

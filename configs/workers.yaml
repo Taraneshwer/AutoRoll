@@ -1,0 +1,23 @@
+# AutoRoll Phase 14 — Distributed Worker Architecture Configuration
+
+workers:
+  heartbeat_interval_seconds: 5
+  offline_timeout_seconds: 15
+  degraded_timeout_seconds: 10
+  draining_timeout_seconds: 60
+  auth_token: "autoroll_worker_secret_token_2026"
+  max_camera_capacity_default: 4
+
+scheduler:
+  gpu_weight: 0.35
+  queue_weight: 0.25
+  camera_weight: 0.20
+  latency_weight: 0.20
+  affinity_enabled: true
+
+inference:
+  target_fps: 15
+  frame_queue_size: 2
+  device: "cuda" # or "cpu"
+  minifasnet_threshold: 0.90
+  arcface_threshold: 0.0540

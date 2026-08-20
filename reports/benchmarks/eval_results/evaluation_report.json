@@ -1,0 +1,104 @@
+{
+  "experiment_id": "eval_phase5",
+  "calibrated_threshold": 0.9393,
+  "pretrained_metrics": {
+    "model_version": "arcface_iresnet50_v1",
+    "total_pairs": 21,
+    "num_genuine": 18,
+    "num_impostor": 3,
+    "threshold": 0.9393,
+    "accuracy": 0.9048,
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1_score": 0.9474,
+    "far": 0.6667,
+    "frr": 0.0,
+    "eer": 0.0,
+    "eer_threshold": 0.9893,
+    "tar_at_far": [
+      {
+        "far_target": 0.1,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.01,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.001,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.0001,
+        "tar": 1.0,
+        "threshold": 0.9892
+      }
+    ],
+    "genuine_stats": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "impostor_stats": {
+      "mean": 0.9627,
+      "std": 0.0261,
+      "min": 0.9271,
+      "max": 0.9892
+    },
+    "avg_latency_ms": 0.46
+  },
+  "finetuned_metrics": {
+    "model_version": "arcface_iresnet50_v1",
+    "total_pairs": 21,
+    "num_genuine": 18,
+    "num_impostor": 3,
+    "threshold": 0.9393,
+    "accuracy": 0.9048,
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1_score": 0.9474,
+    "far": 0.6667,
+    "frr": 0.0,
+    "eer": 0.0,
+    "eer_threshold": 0.9893,
+    "tar_at_far": [
+      {
+        "far_target": 0.1,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.01,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.001,
+        "tar": 1.0,
+        "threshold": 0.9892
+      },
+      {
+        "far_target": 0.0001,
+        "tar": 1.0,
+        "threshold": 0.9892
+      }
+    ],
+    "genuine_stats": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "impostor_stats": {
+      "mean": 0.9627,
+      "std": 0.0261,
+      "min": 0.9271,
+      "max": 0.9892
+    },
+    "avg_latency_ms": 0.46
+  }
+}

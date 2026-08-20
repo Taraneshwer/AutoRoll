@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.server
+    container_name: autoroll-server
+    ports:
+      - "8000:8000"
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8000
+      - DATABASE_URL=sqlite:///./autoroll.db
+    volumes:
+      - ../data:/app/data
+
+  worker:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.worker
+    container_name: autoroll-worker-01
+    environment:
+      - WORKER_ID=worker-node-01
+      - SERVER_WS_URL=ws://server:8000/ws/workers
+      - DEVICE_TYPE=cpu
+    depends_on:
+      - server
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+    container_name: autoroll-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - server

@@ -1,0 +1,7 @@
+calibrated_on_samples: 21
+criterion: eer
+f1_at_threshold: 1.0
+far_at_threshold: 0.0
+frr_at_threshold: 0.0
+model_version: arcface_iresnet50_v1
+threshold: 0.9393

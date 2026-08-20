@@ -1,0 +1,20 @@
+batch_size: 8
+dataset_dir: ./data/processed_datasets/sample_subset
+device: auto
+early_stopping_patience: 4
+epochs: 5
+experiment_id: exp_arcface_iresnet50_v1
+learning_rate: 0.001
+margin: 0.5
+num_workers: 0
+pretrained_weights_path: ''
+save_dir: ./models/trained
+scale: 64.0
+seed: 42
+staged_unfreezing:
+  enabled: true
+  stage1_epochs: 2
+  stage2_epochs: 2
+  stage3_epochs: 1
+use_amp: true
+weight_decay: 0.0005

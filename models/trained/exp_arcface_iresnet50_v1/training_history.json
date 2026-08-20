@@ -1,0 +1,50 @@
+{
+  "experiment_id": "exp_arcface_iresnet50_v1",
+  "epochs": [
+    {
+      "epoch": 1,
+      "stage": 1,
+      "train_loss": 41.4862,
+      "val_loss": 55.6476,
+      "train_acc": 0.0,
+      "val_acc": 0.0,
+      "learning_rate": 0.0009045084971874737
+    },
+    {
+      "epoch": 2,
+      "stage": 1,
+      "train_loss": 28.6178,
+      "val_loss": 67.1642,
+      "train_acc": 0.0,
+      "val_acc": 0.0,
+      "learning_rate": 0.0006545084971874737
+    },
+    {
+      "epoch": 3,
+      "stage": 2,
+      "train_loss": 39.188,
+      "val_loss": 3.5936,
+      "train_acc": 0.0,
+      "val_acc": 0.0,
+      "learning_rate": 0.00034549150281252633
+    },
+    {
+      "epoch": 4,
+      "stage": 2,
+      "train_loss": 18.6726,
+      "val_loss": 9.621,
+      "train_acc": 25.0,
+      "val_acc": 0.0,
+      "learning_rate": 9.549150281252633e-05
+    },
+    {
+      "epoch": 5,
+      "stage": 3,
+      "train_loss": 30.1229,
+      "val_loss": 55.8011,
+      "train_acc": 6.25,
+      "val_acc": 0.0,
+      "learning_rate": 0.0
+    }
+  ]
+}

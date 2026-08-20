@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  remote-worker:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.worker
+    container_name: autoroll-remote-worker
+    environment:
+      - WORKER_ID=worker-remote-gpu-01
+      - SERVER_WS_URL=ws://192.168.1.100:8000/ws/workers
+      - DEVICE_TYPE=cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
