@@ -59,4 +59,7 @@ htmlcov/
 # AutoRoll Local Data
 /data/
 /logs/
+<<<<<<< HEAD
 # /*_legacy/
+=======
+>>>>>>> parent of 674f607 (Removed legacy frontend)
