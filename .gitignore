@@ -59,4 +59,4 @@ htmlcov/
 # AutoRoll Local Data
 /data/
 /logs/
-/*_legacy/
+# /*_legacy/
